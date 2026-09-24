@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "UZ5D4857MX.com.gates.gatesApp",
+        "paths": ["*"]
+      }
+    ]
+  }
+}
