@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eliminar mis datos — Vecinoo</title>
+<meta name="description" content="Solicita la eliminación de tu cuenta y tus datos personales de Vecinoo." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo">vecinoo</a>
+    <a href="/#demo" class="btn btn-primary">Solicitar demo</a>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="container legal-inner">
+    <p class="eyebrow">Privacidad</p>
+    <h1>Eliminar mis datos</h1>
+    <p class="legal-meta">Última actualización: 1 de octubre de 2026</p>
+
+    <p>Desde aquí puedes solicitar que eliminemos tu cuenta de Vecinoo y los datos personales asociados. Procesamos la solicitud en un máximo de 30 días y te confirmamos por correo.</p>
+
+    <h2>Qué se elimina</h2>
+    <ul>
+      <li>Tu perfil: nombre, correo, teléfono y unidad asociada.</li>
+      <li>Tus invitaciones de visitas, reservas y reportes de incidencias.</li>
+      <li>Tu identificador de notificaciones y los datos técnicos de tus dispositivos.</li>
+    </ul>
+
+    <h2>Qué podemos conservar</h2>
+    <p>Los registros que la ley o la contabilidad de tu comunidad exijan conservar, como comprobantes y estados de cuenta, se mantienen de forma anonimizada o por el tiempo mínimo requerido. Por seguridad podemos pedirte que confirmes tu identidad antes de eliminar la cuenta.</p>
+
+    <form class="demo-form" id="delete-form" novalidate>
+      <h3>Solicitar eliminación</h3>
+      <p class="form-hint">Los campos marcados son obligatorios, excepto el comentario.</p>
+      <div class="form-grid">
+          <label class="field"><span>Nombre completo</span><input name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required /></label>
+          <label class="field"><span>Correo de tu cuenta</span><input name="correo" type="email" placeholder="nombre@correo.com" autocomplete="email" required /></label>
+          <label class="field"><span>Residencial</span><input name="residencial" type="text" placeholder="Nombre de la comunidad" required /></label>
+          <label class="field"><span>Unidad</span><input name="unidad" type="text" placeholder="Ej. A-204" required /></label>
+          <label class="field field-wide"><span>¿Qué quieres que eliminemos?</span><select name="alcance" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option>Mi cuenta y todos mis datos</option>
+              <option>Solo algunos datos (indícalos abajo)</option>
+            </select></label>
+          <label class="field field-wide"><span>Comentario (opcional)</span><textarea name="comentario" placeholder="Cuéntanos si necesitas algo más"></textarea></label>
+      </div>
+      <label class="check"><input type="checkbox" name="confirmo" required /><span>Entiendo que la eliminación es permanente y que perderé el acceso a mi cuenta.</span></label>
+      <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px">Enviar solicitud</button>
+      <p class="form-status" id="form-status" role="status" aria-live="polite">Usaremos estos datos solo para atender tu solicitud.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <a href="/" class="logo">vecinoo</a>
+    <nav class="footer-links" aria-label="Legal">
+      <a href="/terminos">Términos y condiciones</a>
+      <a href="/privacidad">Política de privacidad</a>
+      <a href="/eliminar-datos">Eliminar mis datos</a>
+    </nav>
+    <p>Gestión residencial, más cerca de tu comunidad.</p>
+  </div>
+</footer>
+
+<script>
+  var form = document.getElementById('delete-form');
+  var status = document.getElementById('form-status');
+  // No backend yet: opens a pre-filled email to the privacy inbox.
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    var d = new FormData(form);
+    var body = [
+      'Nombre: ' + d.get('nombre'),
+      'Correo de la cuenta: ' + d.get('correo'),
+      'Residencial: ' + d.get('residencial'),
+      'Unidad: ' + d.get('unidad'),
+      'Alcance: ' + d.get('alcance'),
+      'Comentario: ' + (d.get('comentario') || '—')
+    ].join('\n');
+    window.location.href = 'mailto:hola@vecinoo.app?subject=' +
+      encodeURIComponent('Solicitud de eliminación de datos') + '&body=' + encodeURIComponent(body);
+    status.textContent = 'Se abrió tu correo con la solicitud lista para enviar.';
+  });
+</script>
+
+</body>
+</html>
