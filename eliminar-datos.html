@@ -15,31 +15,49 @@
 <header class="nav">
   <div class="container nav-inner">
     <a href="/" class="logo">vecinoo</a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="/#plataforma">La plataforma</a>
+      <a href="/#para-quien">Para quién</a>
+      <a href="/#planes">Planes</a>
+    </nav>
     <a href="/#demo" class="btn btn-primary">Solicitar demo</a>
   </div>
 </header>
 
-<main class="legal">
-  <div class="container legal-inner">
-    <p class="eyebrow">Privacidad</p>
-    <h1>Eliminar mis datos</h1>
-    <p class="legal-meta">Última actualización: 1 de octubre de 2026</p>
+<main>
+  <section class="legal-hero">
+    <div class="container">
+      <p class="eyebrow">Privacidad</p>
+      <h1>Eliminar mis datos</h1>
+      <p class="legal-lede">Solicita que eliminemos tu cuenta de Vecinoo y los datos personales asociados. Revisamos tu solicitud, confirmamos tu identidad y te avisamos por correo cuando esté lista.</p>
+      <ol class="steps">
+        <li><span>1</span><div><strong>Envías la solicitud</strong><small>Con el correo de tu cuenta</small></div></li>
+        <li><span>2</span><div><strong>Verificamos tu identidad</strong><small>Por seguridad de tu comunidad</small></div></li>
+        <li><span>3</span><div><strong>Eliminamos tus datos</strong><small>En un máximo de 30 días</small></div></li>
+      </ol>
+    </div>
+  </section>
 
-    <p>Desde aquí puedes solicitar que eliminemos tu cuenta de Vecinoo y los datos personales asociados. Procesamos la solicitud en un máximo de 30 días y te confirmamos por correo.</p>
+  <div class="container delete-layout">
+    <div class="delete-info">
+      <article class="info-card">
+        <h2>Qué se elimina</h2>
+        <ul class="tick-list">
+          <li>Tu perfil: nombre, correo, teléfono y unidad asociada.</li>
+          <li>Tus invitaciones de visitas, reservas y reportes de incidencias.</li>
+          <li>Tu identificador de notificaciones y datos técnicos de tus dispositivos.</li>
+        </ul>
+      </article>
+      <article class="info-card info-card-warm">
+        <h2>Qué podemos conservar</h2>
+        <p>Los registros que la ley o la contabilidad de tu comunidad exijan conservar, como comprobantes y estados de cuenta, se mantienen anonimizados o por el tiempo mínimo requerido.</p>
+      </article>
+      <p class="info-foot">¿Prefieres escribirnos? <a href="mailto:hola@vecinoo.app">hola@vecinoo.app</a> · Más detalles en la <a href="/privacidad">Política de privacidad</a>.</p>
+    </div>
 
-    <h2>Qué se elimina</h2>
-    <ul>
-      <li>Tu perfil: nombre, correo, teléfono y unidad asociada.</li>
-      <li>Tus invitaciones de visitas, reservas y reportes de incidencias.</li>
-      <li>Tu identificador de notificaciones y los datos técnicos de tus dispositivos.</li>
-    </ul>
-
-    <h2>Qué podemos conservar</h2>
-    <p>Los registros que la ley o la contabilidad de tu comunidad exijan conservar, como comprobantes y estados de cuenta, se mantienen de forma anonimizada o por el tiempo mínimo requerido. Por seguridad podemos pedirte que confirmes tu identidad antes de eliminar la cuenta.</p>
-
-    <form class="demo-form" id="delete-form" novalidate>
-      <h3>Solicitar eliminación</h3>
-      <p class="form-hint">Los campos marcados son obligatorios, excepto el comentario.</p>
+    <form class="demo-form delete-form" id="delete-form" novalidate>
+      <h2>Solicitar eliminación</h2>
+      <p class="form-hint">Todos los campos son obligatorios, excepto el comentario.</p>
       <div class="form-grid">
           <label class="field"><span>Nombre completo</span><input name="nombre" type="text" placeholder="Tu nombre" autocomplete="name" required /></label>
           <label class="field"><span>Correo de tu cuenta</span><input name="correo" type="email" placeholder="nombre@correo.com" autocomplete="email" required /></label>
@@ -53,7 +71,7 @@
           <label class="field field-wide"><span>Comentario (opcional)</span><textarea name="comentario" placeholder="Cuéntanos si necesitas algo más"></textarea></label>
       </div>
       <label class="check"><input type="checkbox" name="confirmo" required /><span>Entiendo que la eliminación es permanente y que perderé el acceso a mi cuenta.</span></label>
-      <button type="submit" class="btn btn-primary btn-block" style="margin-top:20px">Enviar solicitud</button>
+      <button type="submit" class="btn btn-primary btn-block">Enviar solicitud</button>
       <p class="form-status" id="form-status" role="status" aria-live="polite">Usaremos estos datos solo para atender tu solicitud.</p>
     </form>
   </div>
