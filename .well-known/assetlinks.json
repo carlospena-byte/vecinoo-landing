@@ -4,7 +4,10 @@
     "target": {
       "namespace": "android_app",
       "package_name": "app.vecinoo.app",
-      "sha256_cert_fingerprints": ["C9:3D:AB:8F:80:72:E7:DD:17:B3:BD:F8:43:9B:14:7E:7A:33:9B:3D:5F:63:36:05:D1:49:BB:2B:9F:9C:2E:DE"]
+      "sha256_cert_fingerprints": [
+        "79:D1:04:2B:04:0F:7B:C3:53:ED:4B:79:B6:57:4E:FC:72:C3:4C:F3:D1:FB:3F:00:D2:D2:3F:21:39:22:8A:5C",
+        "C9:3D:AB:8F:80:72:E7:DD:17:B3:BD:F8:43:9B:14:7E:7A:33:9B:3D:5F:63:36:05:D1:49:BB:2B:9F:9C:2E:DE"
+      ]
     }
   }
 ]

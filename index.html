@@ -2,6 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" />
+<script>
+  // FastLane invite links are shared as vecinoo.app/#fastlane/<code>; the
+  // self-registration page is served from /fastlane on this same domain.
+  if (location.hash.indexOf('#fastlane/') === 0) {
+    location.replace('/fastlane' + location.hash);
+  }
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Vecinoo — Administración residencial, sin complicaciones</title>
 <meta name="description" content="Vecinoo conecta a tu administración, residentes y seguridad: visitas con QR, reservas de amenidades, incidencias, pagos y comunicación en un mismo lugar." />
